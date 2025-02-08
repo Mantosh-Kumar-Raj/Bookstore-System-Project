@@ -27,3 +27,42 @@ CREATE TABLE Books_details(
          Price FLOAT,
          Stock INT
 );
+
+### 2. Customers Table (`Customers_details`)
+
+This table holds information about the Customers in the bookstore.
+
+```sql
+CREATE TABLE Customers_details(
+         Customer_ID INT PRIMARY KEY,
+         Name VARCHAR(255),
+         Email VARCHAR(255),
+         Phone VARCHAR(255),
+         City VARCHAR(255),
+         Country VARCHAR(255)
+);
+
+### 3. Orders Table(`Orders_details`)
+
+This table holds information about the Customers in the bookstore.
+
+```sql
+CREATE TABLE Orders_details (
+         Order_ID INT PRIMARY KEY,
+         Customer_ID INT REFERENCES Customers_details(Customer_ID),
+         Book_ID INT REFERENCES Books_details(Book_ID),
+         Order_Date DATE,
+         Quantity INT,
+         Total_Amount FLOAT
+);
+
+
+
+
+
+
+
+
+
+
+
