@@ -1,60 +1,24 @@
 # Bookstore System Project
 
-## Project Overview
+### Project Title: Bookstore System
 
-The **Bookstore System** is a beginner-friendly SQL-based project designed to help you manage books, customers, and orders in a bookstore. It allows you to:
-- Add books with details such as title, author, price, and stock.
-- Manage customer information such as name, email, and phone number.
-- Track orders placed by customers, including which books they ordered, the quantity, and the total amount spent.
+A beginner-friendly SQL project designed to manage books, customers, and orders in a bookstore. This project demonstrates how to use SQL for database creation, table design, and querying data. It is ideal for beginners looking to practice SQL and understand how to handle relational data in a simple system.
 
-This project is perfect for beginners who are learning how to use SQL for creating databases and managing data.
+## Key Objectives
+- **Database Initialization**: Set up and populate a bookstore database with structured data.
+- **Data Management**: Manage book details, customer information, and order records.
+- **Order Tracking**: Track customer orders, including books purchased, quantities, and total amounts.
+- **Sales Insights**: Extract data using SQL queries to understand book sales and customer behavior.
 
-## Database Schema
+## Key Findings
+- **Book Availability**: Stock levels and prices can be monitored to identify high-demand books.
+- **Customer Insights**: Analyze customer data to identify purchasing patterns and demographics.
+- **Order Trends**: Explore sales data to identify peak ordering periods or customer preferences.
 
-The database has three main tables: **Books**, **Customers**, and **Orders**. Here's how each table is structured:
-
-### 1. Books Table (`Books_details`)
-
-This table holds information about the books available in the bookstore.
-
-```sql
-CREATE TABLE Books_details(
-         Book_ID INT PRIMARY KEY,
-         Title VARCHAR(255),
-         Author VARCHAR(255),
-         Genre VARCHAR(255),
-         Published_Year INT,
-         Price FLOAT,
-         Stock INT
-);
-
-### 2. Customers Table (`Customers_details`)
-
-This table holds information about the Customers in the bookstore.
-
-```sql
-CREATE TABLE Customers_details(
-         Customer_ID INT PRIMARY KEY,
-         Name VARCHAR(255),
-         Email VARCHAR(255),
-         Phone VARCHAR(255),
-         City VARCHAR(255),
-         Country VARCHAR(255)
-);
-
-### 3. Orders Table(`Orders_details`)
-
-This table holds information about the Customers in the bookstore.
-
-```sql
-CREATE TABLE Orders_details (
-         Order_ID INT PRIMARY KEY,
-         Customer_ID INT REFERENCES Customers_details(Customer_ID),
-         Book_ID INT REFERENCES Books_details(Book_ID),
-         Order_Date DATE,
-         Quantity INT,
-         Total_Amount FLOAT
-);
+## Reports & Impact
+- **Book Inventory Summary**: Overview of available books and their stock levels.
+- **Sales Insights**: Overview of the total sales made by customers.
+- **Customer Analysis**: Identify top customers and popular books based on order data.
 
 
 
