@@ -20,13 +20,44 @@ A beginner-friendly SQL project designed to manage books, customers, and orders 
 - **Sales Insights**: Overview of the total sales made by customers.
 - **Customer Analysis**: Identify top customers and popular books based on order data.
 
+## SQL Script to Create Database and Tables
 
+To create the database and tables, use the following SQL script:
 
+```sql
+-- Create Database 
+CREATE DATABASE Sql_project2_db;
 
+-- Use the database
+USE Sql_project2_db;
 
+-- Create Books Table
+CREATE TABLE Books_details(
+         Book_ID INT PRIMARY KEY,
+         Title VARCHAR(255),
+         Author VARCHAR(255),
+         Genre VARCHAR(255),
+         Published_Year INT,
+         Price FLOAT,
+         Stock INT
+);
 
+-- Create Customers Table
+CREATE TABLE Customers_details(
+         Customer_ID INT PRIMARY KEY,
+         Name VARCHAR(255),
+         Email VARCHAR(255),
+         Phone VARCHAR(255),
+         City VARCHAR(255),
+         Country VARCHAR(255)
+);
 
-
-
-
-
+-- Create Orders Table
+CREATE TABLE Orders_details (
+         Order_ID INT PRIMARY KEY,
+         Customer_ID INT REFERENCES Customers_details(Customer_ID),
+         Book_ID INT REFERENCES Books_details(Book_ID),
+         Order_Date DATE,
+         Quantity INT,
+         Total_Amount FLOAT
+);
